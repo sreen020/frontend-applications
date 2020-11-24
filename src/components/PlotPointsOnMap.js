@@ -8,7 +8,7 @@ function PlotPoints({plotPoints, data, selectedYears}){
   // Setup global variables
   const svg = d3.select("svg");
   const g = d3.select("g");
-  const projection = d3.geoMercator().scale(6000).center([5.916667, 52.47]);
+  const projection = d3.geoMercator().scale(5000).center([6.816667, 52.147]);
 
   setPoints(selectedYears);
 

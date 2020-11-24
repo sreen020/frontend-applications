@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import * as d3 from "d3";
 
 function SelectYear({allYears, setSelectedYears}) {
   let arrayWithAllYears = []
@@ -13,6 +14,7 @@ function SelectYear({allYears, setSelectedYears}) {
     }
   }
   const filteredUniqueYears = arrayWithAllYears.filter(makeArrUnique)
+  filteredUniqueYears.sort(d3.ascending)
 
 
   // this function filters trough all objects and returns the objects with the selected year

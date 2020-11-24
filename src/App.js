@@ -46,7 +46,7 @@ function App() {
       </div>
     )
   } else if (!loaded) {
-    return <div>Loading...</div>
+    return <div class="loadingScreen">Loading...</div>
   } else {
     return null
   }

@@ -5,8 +5,6 @@ import * as topojson from "topojson";
 import * as zoom from "d3-zoom";
 
 function CreateMap({mapData}){
-  const width = 900;
-  const height = 500;
   const node = document.getElementById('app')
   const parent = useRef(node)
 
@@ -33,7 +31,7 @@ function CreateMap({mapData}){
     
       // projection is the way of showing the map
       const g = svg.append("g");
-      const projection = d3.geoMercator().scale(6000).center([5.916667, 52.47]);
+      const projection = d3.geoMercator().scale(5000).center([6.816667, 52.147]);
       const pathGenerator = path.projection(projection);
       
       console.log("data", data)
