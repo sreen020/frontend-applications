@@ -7,7 +7,7 @@ function Aside({allYears, setSelectedYears}) {
     <aside>
       <h1>Aside</h1>
       <SelectYear allYears={allYears} setSelectedYears={setSelectedYears}/>
-      <p class="totalAmount"></p>
+      <p className="totalAmount"></p>
     </aside>
   )
 }

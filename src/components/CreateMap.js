@@ -7,7 +7,8 @@ import * as zoom from "d3-zoom";
 function CreateMap({mapData}){
   const node = document.getElementById('app')
   const parent = useRef(node)
-
+  console.log(mapData)
+  useEffect(() => {
   BuildPathsToMap(mapData)
 
   // This function will render a map of Holland
@@ -31,10 +32,9 @@ function CreateMap({mapData}){
     
       // projection is the way of showing the map
       const g = svg.append("g");
-      const projection = d3.geoMercator().scale(5000).center([6.816667, 52.147]);
+      const projection = d3.geoMercator().scale(5000).center([5.816667, 52.147]);
       const pathGenerator = path.projection(projection);
       
-      console.log("data", data)
       // The dutch map is getting splitt in Areas
       const area = g
         .append("g")
@@ -95,9 +95,7 @@ function CreateMap({mapData}){
       }
     }
   }
-  return(
-    <h1>MAP</h1>
-  )
+}, [])
 }
 
 

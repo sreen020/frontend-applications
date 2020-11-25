@@ -8,7 +8,7 @@ function PlotPoints({plotPoints, data, selectedYears}){
   // Setup global variables
   const svg = d3.select("svg");
   const g = d3.select("g");
-  const projection = d3.geoMercator().scale(5000).center([6.816667, 52.147]);
+  const projection = d3.geoMercator().scale(5000).center([5.816667, 52.147]);
 
   setPoints(selectedYears);
 
@@ -18,15 +18,26 @@ function PlotPoints({plotPoints, data, selectedYears}){
     const totalAmount = d3.select(".totalAmount")
 
     points
+      .attr("r", 0)
       .attr("cx", function(d) { return projection([d.location.longitude, d.location.latitude])[0] })
       .attr("cy", function(d) { return projection([d.location.longitude, d.location.latitude])[1] })
+      .transition()
+        .delay(function(d, i) { return i * 10; })
+        .duration(1500)
+        .ease(d3.easeBounce)
+        .attr('r', 3)
 
     // circle element is being created for each data object, with cx and cy attributes the circles are placed correctly
     points.enter()
         .append("circle")
-        .attr("r", 3)
+        .attr("r", 0)
         .attr("cx", function(d) { return projection([d.location.longitude, d.location.latitude])[0] })
         .attr("cy", function(d) { return projection([d.location.longitude, d.location.latitude])[1] })
+        .transition()
+    				.delay(function(d, i) { return i * 10; })
+            .duration(1500)
+            .ease(d3.easeBounce)
+            .attr('r', 3)
 
     // removes circles for the filter options
     points.exit()
@@ -37,11 +48,8 @@ function PlotPoints({plotPoints, data, selectedYears}){
       .text("Aantal getoonde parkeerautomaten: " + data.length)
   }
 
-
   return(
-    <div>
-      <h1>ASDASD</h1>
-    </div>
+    <p>aa</p>
   )
 }
 

@@ -21,7 +21,6 @@ function SelectYear({allYears, setSelectedYears}) {
     const filterResults = (uniqueYear) => (e) => {
       const filteredYears = allYears.filter(chosenYear => chosenYear.startdatesellingpoint ? chosenYear.startdatesellingpoint.slice(0, 4) === uniqueYear : null)
       setSelectedYears(filteredYears)
-      console.log(filteredYears)
     };
 
   return(
@@ -29,8 +28,7 @@ function SelectYear({allYears, setSelectedYears}) {
       return(
         <button onClick={filterResults(uniqueYear)} key={index}>{uniqueYear}</button>
       )
-    })
-    // <button onClick={setSelectedYears(allYears)}>Reset</button>
+    })    
   )
 }
 

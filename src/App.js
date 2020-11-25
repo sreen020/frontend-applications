@@ -1,7 +1,8 @@
 // import Aside from './components/Aside'
 import Map from './components/Map'
 import Aside from './components/Aside'
-import SelectYear from './components/SelectYear'
+import InformationBox from './components/InformationBox'
+
 const { useEffect, useState } = require("react")
 
 function App() {
@@ -37,16 +38,16 @@ function App() {
   }, [])
 
 
-
   if (allYears && selectedYears && mapData && plotPoints) {
     return(
       <div className="App">
         <Aside allYears={allYears} selectedYears={selectedYears} setSelectedYears={setSelectedYears}/>
+        <InformationBox allYears={allYears} selectedYears={selectedYears} setSelectedYears={setSelectedYears}/>
         <Map selectedYears={selectedYears} setSelectedYears={setSelectedYears} allYears={allYears} mapData={mapData} plotPoints={setPlotPoints}/>
       </div>
     )
   } else if (!loaded) {
-    return <div class="loadingScreen">Loading...</div>
+    return <div className="loadingScreen">Loading...</div>
   } else {
     return null
   }
