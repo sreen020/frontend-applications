@@ -4,10 +4,7 @@ import { data } from './informationForYears';
 
 function InformationFilter({allYears, selectedYears, setSelectedYears}) {
   const informationContainer = document.getElementsByClassName('information-container')
-  console.log(informationContainer);
   let arrayForSelectedYears = []
-
-  console.log(data)
 
   selectedYears.map((selectYear, index) => {
     return arrayForSelectedYears.push(selectYear.startdatesellingpoint ? selectYear.startdatesellingpoint.slice(0, 4) : null);

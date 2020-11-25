@@ -18,17 +18,32 @@ function SelectYear({allYears, setSelectedYears}) {
 
 
   // this function filters trough all objects and returns the objects with the selected year
-    const filterResults = (uniqueYear) => (e) => {
-      const filteredYears = allYears.filter(chosenYear => chosenYear.startdatesellingpoint ? chosenYear.startdatesellingpoint.slice(0, 4) === uniqueYear : null)
-      setSelectedYears(filteredYears)
-    };
+  const filterResults = (uniqueYear) => (e) => {
+    const filteredYears = allYears.filter(chosenYear => chosenYear.startdatesellingpoint ? chosenYear.startdatesellingpoint.slice(0, 4) === uniqueYear : null)
+    setSelectedYears(filteredYears)
+    console.log("string");
+  };
 
-  return(
-    filteredUniqueYears.map((uniqueYear, index) => {
+  function resetState() {
+    setSelectedYears(allYears)
+    console.log("1");
+  }
+
+  function filterYears() {
+    const TEST = filteredUniqueYears.map((uniqueYear, index) => {
       return(
         <button onClick={filterResults(uniqueYear)} key={index}>{uniqueYear}</button>
       )
-    })    
+    })
+    console.log("2");
+    return TEST
+  }
+
+  return(
+    <div>
+      {filterYears()}
+      <button onClick={resetState()} key="resetKey">Reset</button>
+    </div>
   )
 }
 

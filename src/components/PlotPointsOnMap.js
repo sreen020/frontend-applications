@@ -18,12 +18,11 @@ function PlotPoints({plotPoints, data, selectedYears}){
     const totalAmount = d3.select(".totalAmount")
 
     points
-      .attr("r", 0)
       .attr("cx", function(d) { return projection([d.location.longitude, d.location.latitude])[0] })
       .attr("cy", function(d) { return projection([d.location.longitude, d.location.latitude])[1] })
       .transition()
         .delay(function(d, i) { return i * 10; })
-        .duration(1500)
+        .duration(700)
         .ease(d3.easeBounce)
         .attr('r', 3)
 
@@ -35,7 +34,7 @@ function PlotPoints({plotPoints, data, selectedYears}){
         .attr("cy", function(d) { return projection([d.location.longitude, d.location.latitude])[1] })
         .transition()
     				.delay(function(d, i) { return i * 10; })
-            .duration(1500)
+            .duration(700)
             .ease(d3.easeBounce)
             .attr('r', 3)
 
@@ -49,7 +48,7 @@ function PlotPoints({plotPoints, data, selectedYears}){
   }
 
   return(
-    <p>aa</p>
+    <p></p>
   )
 }
 

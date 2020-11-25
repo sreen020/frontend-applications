@@ -8,6 +8,7 @@ function Aside({allYears, setSelectedYears}) {
       <h1>Aside</h1>
       <SelectYear allYears={allYears} setSelectedYears={setSelectedYears}/>
       <p className="totalAmount"></p>
+      {/* <button onClick={setSelectedYears(allYears)}>reset</button> */}
     </aside>
   )
 }
