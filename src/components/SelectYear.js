@@ -21,28 +21,25 @@ function SelectYear({allYears, setSelectedYears}) {
   const filterResults = (uniqueYear) => (e) => {
     const filteredYears = allYears.filter(chosenYear => chosenYear.startdatesellingpoint ? chosenYear.startdatesellingpoint.slice(0, 4) === uniqueYear : null)
     setSelectedYears(filteredYears)
-    console.log("string");
   };
 
   function resetState() {
     setSelectedYears(allYears)
-    console.log("1");
   }
 
   function filterYears() {
-    const TEST = filteredUniqueYears.map((uniqueYear, index) => {
+    const showFilterBtns = filteredUniqueYears.map((uniqueYear, index) => {
       return(
         <button onClick={filterResults(uniqueYear)} key={index}>{uniqueYear}</button>
       )
     })
-    console.log("2");
-    return TEST
+    return showFilterBtns
   }
 
   return(
     <div>
       {filterYears()}
-      <button onClick={resetState()} key="resetKey">Reset</button>
+      <button onClick={() => resetState()} key="resetKey">Reset</button>
     </div>
   )
 }

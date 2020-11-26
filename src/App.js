@@ -1,4 +1,5 @@
 // import Aside from './components/Aside'
+import ZeroState from './components/ZeroState'
 import Map from './components/Map'
 import Aside from './components/Aside'
 import InformationBox from './components/InformationBox'
@@ -12,6 +13,7 @@ function App() {
   const [allYears, setAllYears] = useState(null)
   const [mapData, setMapData] = useState(null)
   const [plotPoints, setPlotPoints] = useState(null)
+  const [zeroState, setZeroState] = useState(null)
 
   useEffect(() => {
     fetch('https://opendata.rdw.nl/resource/cgqw-pfbp.json?$limit=1000')
@@ -37,10 +39,10 @@ function App() {
       });
   }, [])
 
-
   if (allYears && selectedYears && mapData && plotPoints) {
     return(
       <div className="App">
+        <ZeroState zeroState={zeroState} setZeroState={setZeroState} setSelectedYears={setSelectedYears} allYears={allYears}/>
         <Aside allYears={allYears} selectedYears={selectedYears} setSelectedYears={setSelectedYears}/>
         <InformationBox allYears={allYears} selectedYears={selectedYears} setSelectedYears={setSelectedYears}/>
         <Map selectedYears={selectedYears} setSelectedYears={setSelectedYears} allYears={allYears} mapData={mapData} plotPoints={setPlotPoints}/>
