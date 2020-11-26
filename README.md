@@ -12,11 +12,16 @@ Waar en hoeveel parkeerautomaten worden er jaarlijks in Nederland geplaatst?
 ***Deelvragen en assumpties*** 
 * komen er sommige jaren meer bij dan andere jaren? (Ik denk dat er ieder jaar meer bijkomen, zeker als we kijken naar de grotere steden)
 * Zijn er plaatsen waar de toename groter is dan andere plaatsen? (Ik denk dat de toename in grote steden en daar omheen fors toeneemt)
-* Moet ik hier het hele Jaar door betaald parkeren of alleen in bepaalde maanden? (In de voorbeeld datarijen zag ik veel colommen staan waar je een aantal maanden niet hoeft te betalen)
+* Zijn er opvallende gebeurtenissen waardoor de stijging wordt beinvloed?
 * Waar en hoeveel parkeer parkeerautomaten komen er jaarlijks bij?
+
+Na het inspecteren van de RDW datasets kwam ik er één tegen die me erg aansprak, namelijk GEO Verkooppunten (https://opendata.rdw.nl/Parkeren/Open-Data-Parkeren-GEO-VERKOOPPUNT/cgqw-pfbp/data). Deze dataset staat vol met 14.000 objecten van parkeerautomaten in Nederland. De reden dat deze dataset mij zo erg aanspreekt is omdat ze als een van de enige de datums bijhouden. Hier kan je mooie visualisaties en transities mee maken. Ook vind ik het interessant om te werken met betaalautomaten, iedereen maakt er gebruik van maar bijna niemand weet hoeveel er staan en al helemaal niet wanneer deze zijn neergezet.
 
 Deze vragen ben ik gaan onderzoeken aan de hand van datasets. Uiteindelijk heb ik een website gebouwd met behulp van een front-end framework waarin ik een overzichtelijke data visualisatie laat zien. Hier is het aantal parkeer automaten in Nederland te zien en hoe dit aantal zich heeft ontwikkeld.
 
+De Volkskrant wilt graag iets interessants zien. Ik laat niet alleen maar data zien maar ik ga er (als een echte datajournalist) ook gebeurtenissen aan koppelen. 
+
+![](https://github.com/sreen020/frontend-data/blob/main/githubIMG/conceptImg.png)
 
 ## Install
 
