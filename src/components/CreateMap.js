@@ -2,10 +2,10 @@ import React, { useEffect, useRef } from "react";
 import * as d3 from "d3";
 import * as topojson from "topojson";
 
-// eslint-disable-next-line react-hooks/exhaustive-deps
 function CreateMap({ mapData, setMapData, allYears }) {
   const node = document.getElementById("app");
   const parent = useRef(node);
+
   useEffect(() => {
     BuildPathsToMap(mapData);
 
@@ -34,7 +34,7 @@ function CreateMap({ mapData, setMapData, allYears }) {
           .geoMercator()
           .scale(5000)
           .center([5.816667, 52.147]);
-        const pathGenerator = path.projection(projection);
+        path.projection(projection);
 
         // The dutch map is getting splitt in Areas
         const area = g
