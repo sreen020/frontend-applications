@@ -8,3 +8,13 @@ aside {
   padding: 3rem;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
+
+.reset-button {
+  background: none;
+  border-bottom: 1px solid;
+}
+
+.reset-button:hover {
+  color: #69b3a2;
+  background: none;
+}

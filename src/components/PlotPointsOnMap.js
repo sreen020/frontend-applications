@@ -24,7 +24,7 @@ function PlotPoints({ selectedYears }) {
       .delay(function (d, i) {
         return i * 10;
       })
-      .duration(50)
+      .duration(5)
       .ease(d3.easeBounce)
       .attr("r", 3);
 
@@ -43,7 +43,7 @@ function PlotPoints({ selectedYears }) {
       .delay(function (d, i) {
         return i * 10;
       })
-      .duration(50)
+      .duration(5)
       .ease(d3.easeBounce)
       .attr("r", 3);
 

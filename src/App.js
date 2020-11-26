@@ -15,7 +15,7 @@ function App() {
   const [zeroState, setZeroState] = useState(null);
 
   useEffect(() => {
-    fetch("https://opendata.rdw.nl/resource/cgqw-pfbp.json?$limit=1000")
+    fetch("https://opendata.rdw.nl/resource/cgqw-pfbp.json?$limit=100000")
       .then((res) => res.json())
       .then((data) => {
         setAllYears(data);

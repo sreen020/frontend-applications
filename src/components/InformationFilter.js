@@ -29,7 +29,7 @@ function InformationFilter({ allYears, selectedYears, setSelectedYears }) {
   } else {
     return (
       <div className="information-container">
-        <p>Filter op jaar voor informatie</p>
+        <p>Selecteer een jaar voor verdere informatie</p>
       </div>
     );
   }

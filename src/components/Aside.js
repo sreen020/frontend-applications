@@ -5,7 +5,7 @@ import "../style/Aside.css";
 function Aside({ allYears, setSelectedYears }) {
   return (
     <aside>
-      <h1>Aside</h1>
+      <h1>Filter</h1>
       <SelectYear allYears={allYears} setSelectedYears={setSelectedYears} />
       <p className="totalAmount"></p>
     </aside>

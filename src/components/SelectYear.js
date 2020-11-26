@@ -48,7 +48,11 @@ function SelectYear({ allYears, setSelectedYears }) {
   return (
     <div>
       {filterYears()}
-      <button onClick={() => resetState()} key="resetKey">
+      <button
+        className="reset-button"
+        onClick={() => resetState()}
+        key="resetKey"
+      >
         Reset
       </button>
     </div>

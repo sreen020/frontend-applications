@@ -16,7 +16,7 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 2rem;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   color: #ececec;
 }
 
@@ -40,16 +40,14 @@ circle {
   fill-opacity: 0.2;
 }
 
-
 /* Aside */
 button {
-  width: 6rem;
-  padding: 0.7rem 1.9rem;
+  padding: 0.7rem 2rem;
   text-align: center;
   background: #1e2539;
   color: #ececec;
-  font-family: 'Roboto', sans-serif;
-  border:none;
+  font-family: "Roboto", sans-serif;
+  border: none;
   margin-right: 0.2rem;
   margin-bottom: 0.2rem;
   cursor: pointer;
@@ -71,9 +69,10 @@ button:hover {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
-h1, p {
+h1,
+p {
   color: #ececec;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .zero-state {
@@ -90,4 +89,9 @@ h1, p {
 
 .hide-state {
   display: none;
+}
+
+.zero-state p,
+.zero-state h1 {
+  width: 28rem;
 }
