@@ -1,70 +1,80 @@
-# Getting Started with Create React App
+# Front-end Applications
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Live demo
 
-## Available Scripts
+https://sreen020.netlify.app/
 
-In the project directory, you can run:
+## Concept
 
-### `npm start`
+***Hoofdvraag***<br>
+Waar en hoeveel parkeerautomaten worden er jaarlijks in Nederland geplaatst?
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+***Deelvragen en assumpties*** 
+* komen er sommige jaren meer bij dan andere jaren? (Ik denk dat er ieder jaar meer bijkomen, zeker als we kijken naar de grotere steden)
+* Zijn er plaatsen waar de toename groter is dan andere plaatsen? (Ik denk dat de toename in grote steden en daar omheen fors toeneemt)
+* Moet ik hier het hele Jaar door betaald parkeren of alleen in bepaalde maanden? (In de voorbeeld datarijen zag ik veel colommen staan waar je een aantal maanden niet hoeft te betalen)
+* Waar en hoeveel parkeer parkeerautomaten komen er jaarlijks bij?
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Deze vragen ben ik gaan onderzoeken aan de hand van datasets. Uiteindelijk heb ik een website gebouwd met behulp van een front-end framework waarin ik een overzichtelijke data visualisatie laat zien. Hier is het aantal parkeer automaten in Nederland te zien en hoe dit aantal zich heeft ontwikkeld.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Install
 
-### `npm run build`
+***Clone repo***
+```
+git clone git@github.com:sreen020/frontend-applications.git
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+***navigate in terminal to directory***
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+cd ../../../..
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+***Install project***
 
-### `npm run eject`
+```
+npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+***run project***
+```
+npm start
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Dataset(s)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+**Dataset #1**<br>
+https://opendata.rdw.nl/Parkeren/Open-Data-Parkeren-GEO-VERKOOPPUNT/cgqw-pfbp/ 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+**Wat krijg ik uit deze dataset?** 
+- AreaManagerId, number (Identificatiecode van de gebiedsbeheerder of parkeerexploitant.)
+- SellingPointId, number (Identificatiecode van een verkooppunt. Het SellingPointId is numeriek en hoeft niet uniek te zijn. Een SellingPointId kan op meerdere locaties voorkomen, die samen een verkooppuntgroep vormen.)
+- StartDateSellingPoint, number (Datum vanaf wanneer een bepaald verkooppunt actief is.)
+- EndDateSellingPoint, number (Datum waarop een bepaald verkooppunt niet meer actief is.)
+- SellingPointDesc, string (Omschrijving van een verkooppunt.)
+- Location, string (De coördinaten van een verkooppunt.)
 
-## Learn More
+StartDateSellingPoint en EndDateSellingPoint worden weergegeven als: 20150301. Hier staat 01-03-2015, dmv de slice functie javascript heb ik deze getransformeerd naar het juiste formaat.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+De location wordt bijvoorbeeld als: (51.733028°, 3.774917°) getoond. Dit is opgedeeld in latitude en longitude. Deze heb ik in mijn javascript gescheiden waardoor ik ze straks met D3 kan verwerken.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**Wat ga ik gebruiken?** 
+Ik wil uit deze dataset de location gebruiken om te laten zien waar en hoeveel parkeerautomaten er in Nederland zijn. Ook wil ik de StartDateSellingPoint en de EndDateSellingPoint gebruiken om aan de hand van een timeline weer te geven wanneer deze punten zijn neergezet.
 
-### Code Splitting
+**JSON**
+``` js
+{
+  areamanagerid: "299"
+  location: [
+    {
+      latitude: "51.930899297"
+      longitude: "6.076162452"
+    }
+  ]
+  sellingpointdesc: "Parkeerterrein Haspelstraat"
+  sellingpointid: "8704"
+  startdatesellingpoint: "20180604"
+}
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
