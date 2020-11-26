@@ -1,7 +1,6 @@
-const { useEffect, useState } = require("react");
+const { useState } = require("react");
 
-function ZeroState({zeroState, setZeroState}) {
-
+function ZeroState() {
   const [isActive, setActive] = useState("false");
 
   const handleToggle = () => {
@@ -17,4 +16,4 @@ function ZeroState({zeroState, setZeroState}) {
   );
 }
 
-export default ZeroState
+export default ZeroState;
