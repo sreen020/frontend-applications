@@ -4,6 +4,20 @@
 
 https://sreen020.netlify.app/
 
+## Concept
+
+***Hoofdvraag***<br>
+Waar en hoeveel parkeerautomaten worden er jaarlijks in Nederland geplaatst?
+
+***Deelvragen en assumpties*** 
+* komen er sommige jaren meer bij dan andere jaren? (Ik denk dat er ieder jaar meer bijkomen, zeker als we kijken naar de grotere steden)
+* Zijn er plaatsen waar de toename groter is dan andere plaatsen? (Ik denk dat de toename in grote steden en daar omheen fors toeneemt)
+* Moet ik hier het hele Jaar door betaald parkeren of alleen in bepaalde maanden? (In de voorbeeld datarijen zag ik veel colommen staan waar je een aantal maanden niet hoeft te betalen)
+* Waar en hoeveel parkeer parkeerautomaten komen er jaarlijks bij?
+
+Deze vragen ben ik gaan onderzoeken aan de hand van datasets. Uiteindelijk heb ik een website gebouwd met behulp van een front-end framework waarin ik een overzichtelijke data visualisatie laat zien. Hier is het aantal parkeer automaten in Nederland te zien en hoe dit aantal zich heeft ontwikkeld.
+
+
 ## Install
 
 ***Clone repo***
@@ -27,19 +41,6 @@ npm install
 ```
 npm start
 ```
-
-## Concept
-
-***Hoofdvraag***<br>
-Waar en hoeveel parkeerautomaten worden er jaarlijks in Nederland geplaatst?
-
-***Deelvragen en assumpties*** 
-* komen er sommige jaren meer bij dan andere jaren? (Ik denk dat er ieder jaar meer bijkomen, zeker als we kijken naar de grotere steden)
-* Zijn er plaatsen waar de toename groter is dan andere plaatsen? (Ik denk dat de toename in grote steden en daar omheen fors toeneemt)
-* Moet ik hier het hele Jaar door betaald parkeren of alleen in bepaalde maanden? (In de voorbeeld datarijen zag ik veel colommen staan waar je een aantal maanden niet hoeft te betalen)
-* Waar en hoeveel parkeer parkeerautomaten komen er jaarlijks bij?
-
-Deze vragen ben ik gaan onderzoeken aan de hand van datasets. Uiteindelijk heb ik een website gebouwd met behulp van een front-end framework waarin ik een overzichtelijke data visualisatie laat zien. Hier is het aantal parkeer automaten in Nederland te zien en hoe dit aantal zich heeft ontwikkeld.
 
 ## Dataset(s)
 
