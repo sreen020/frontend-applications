@@ -2,12 +2,12 @@ import CreateMap from './CreateMap'
 import PlotPointsOnMap from './PlotPointsOnMap'
 const { useEffect, useState } = require("react");
 
-function Map({selectedYears, allYears, setSelectedYears, mapData, plotPoints}) {
+function Map({selectedYears, allYears, setSelectedYears, mapData, plotPoints, setMapData}) {
   return(
     <div>
       <svg>
-        <CreateMap mapData={mapData} />
-        <PlotPointsOnMap plotPoints={plotPoints} data={allYears} selectedYears={selectedYears}/>
+        <CreateMap mapData={mapData} setMapData={setMapData} allYears={allYears}/>
+        <PlotPointsOnMap plotPoints={plotPoints} data={allYears} selectedYears={selectedYears} />
       </svg>
     </div>
   )

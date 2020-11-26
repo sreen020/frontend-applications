@@ -45,7 +45,7 @@ function App() {
         <ZeroState zeroState={zeroState} setZeroState={setZeroState} setSelectedYears={setSelectedYears} allYears={allYears}/>
         <Aside allYears={allYears} selectedYears={selectedYears} setSelectedYears={setSelectedYears}/>
         <InformationBox allYears={allYears} selectedYears={selectedYears} setSelectedYears={setSelectedYears}/>
-        <Map selectedYears={selectedYears} setSelectedYears={setSelectedYears} allYears={allYears} mapData={mapData} plotPoints={setPlotPoints}/>
+        <Map selectedYears={selectedYears} setSelectedYears={setSelectedYears} allYears={allYears} mapData={mapData} plotPoints={setPlotPoints} setMapData={setMapData}/>
       </div>
     )
   } else if (!loaded) {

@@ -4,10 +4,9 @@ import * as d3GeoProjection from "d3-geo-projection"
 import * as topojson from "topojson";
 import * as zoom from "d3-zoom";
 
-function CreateMap({mapData}){
+function CreateMap({mapData, setMapData, allYears}){
   const node = document.getElementById('app')
   const parent = useRef(node)
-  console.log(mapData)
   useEffect(() => {
   BuildPathsToMap(mapData)
 
@@ -95,11 +94,10 @@ function CreateMap({mapData}){
       }
     }
   }
+  setMapData(allYears);
 }, [])
 
-  return(
-    <p></p>
-  )
+  return(<React.Fragment />)
 }
 
 

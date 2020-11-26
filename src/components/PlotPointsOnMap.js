@@ -5,13 +5,13 @@ import * as topojson from "topojson";
 import * as zoom from "d3-zoom";
 
 function PlotPoints({plotPoints, data, selectedYears}){
+  console.log(document.querySelector("svg"));
   // Setup global variables
   const svg = d3.select("svg");
   const g = d3.select("g");
   const projection = d3.geoMercator().scale(5000).center([5.816667, 52.147]);
 
   setPoints(selectedYears);
-
   // This function places points on the map using lat and long
   function setPoints(data) {
     const points = g.selectAll("circle").data(data)
@@ -47,9 +47,7 @@ function PlotPoints({plotPoints, data, selectedYears}){
       .text("Aantal getoonde parkeerautomaten: " + data.length)
   }
 
-  return(
-    <p></p>
-  )
+  return(<React.Fragment />)
 }
 
 export default PlotPoints
