@@ -14,6 +14,7 @@ function App() {
   const [plotPoints, setPlotPoints] = useState(null);
   const [zeroState, setZeroState] = useState(null);
 
+  // Fetching RDW Data, when fetch is complete, the states gets updated with the data.
   useEffect(() => {
     fetch("https://opendata.rdw.nl/resource/cgqw-pfbp.json?$limit=100000")
       .then((res) => res.json())
@@ -25,8 +26,8 @@ function App() {
         return data;
       });
 
+    // Fetching data for creating the map (topojson)
     const bbox = [11.825, 53.7253321, -68.6255319, 7.2274985];
-    // Fetch data
     fetch("https://cartomap.github.io/nl/wgs84/gemeente_2020.topojson")
       .then((res) => res.json())
       .then((data) => {
@@ -65,6 +66,8 @@ function App() {
         />
       </div>
     );
+
+    // Loading screen
   } else if (!loaded) {
     return <div className="loadingScreen">Loading...</div>;
   } else {

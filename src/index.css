@@ -57,6 +57,11 @@ button:hover {
   background: #69b3a2;
 }
 
+button:active,
+button:focus {
+  background: #69b3a2;
+}
+
 /* information box  */
 .information-box {
   position: absolute;
@@ -87,6 +92,15 @@ p {
   align-items: center;
 }
 
+.zero-state-btn {
+  background: #00533f;
+  margin-top: 2rem;
+}
+
+.zero-state-btn:hover {
+  background: #69b3a2;
+}
+
 .hide-state {
   display: none;
 }
@@ -94,4 +108,9 @@ p {
 .zero-state p,
 .zero-state h1 {
   width: 28rem;
+}
+
+.totalAmount {
+  padding-top: 5rem;
+  color: #69b3a2;
 }

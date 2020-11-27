@@ -2,7 +2,6 @@ import * as React from "react";
 import * as d3 from "d3";
 
 function PlotPoints({ selectedYears }) {
-  console.log(document.querySelector("svg"));
   // Setup global variables
   const g = d3.select("g");
   const projection = d3.geoMercator().scale(5000).center([5.816667, 52.147]);
@@ -13,6 +12,7 @@ function PlotPoints({ selectedYears }) {
     const points = g.selectAll("circle").data(data);
     const totalAmount = d3.select(".totalAmount");
 
+    // update the exsisting points and change the old location to the new location.
     points
       .attr("cx", function (d) {
         return projection([d.location.longitude, d.location.latitude])[0];
@@ -24,7 +24,7 @@ function PlotPoints({ selectedYears }) {
       .delay(function (d, i) {
         return i * 10;
       })
-      .duration(5)
+      .duration(0.5)
       .ease(d3.easeBounce)
       .attr("r", 3);
 
@@ -43,11 +43,11 @@ function PlotPoints({ selectedYears }) {
       .delay(function (d, i) {
         return i * 10;
       })
-      .duration(5)
+      .duration(0.5)
       .ease(d3.easeBounce)
       .attr("r", 3);
 
-    // removes circles for the filter options
+    // removes the unneeded circles for the filter options
     points.exit().remove();
 
     // shows a text with the current amount of circles showed on the map

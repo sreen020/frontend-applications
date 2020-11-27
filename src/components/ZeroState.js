@@ -1,8 +1,10 @@
 const { useState } = require("react");
 
 function ZeroState() {
+  // setup state for zerostate
   const [isActive, setActive] = useState("false");
 
+  // Toogle the active state (get triggert by clicking the button)
   const handleToggle = () => {
     setActive(!isActive);
   };
@@ -20,7 +22,9 @@ function ZeroState() {
         specifiek jaar. Link verschijnt interessante informatie over jouw
         gekozen jaar.
       </p>
-      <button onClick={handleToggle}>Begrepen</button>
+      <button className="zero-state-btn" onClick={handleToggle}>
+        Begrepen
+      </button>
     </section>
   );
 }
